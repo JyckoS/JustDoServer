@@ -28,7 +28,9 @@ const authenticateToken = (req, res, next) => {
     next();
   });
 };
-
+app.get("/validate-token", authenticateToken, (req, res) => {
+  res.json({ valid: true, user: req.user });
+});
 // TOGGLE COMPLETED
 app.put("/todo/complete", authenticateToken, (req, res) => {
   const userEmail = req.user.email; // from token, not body
