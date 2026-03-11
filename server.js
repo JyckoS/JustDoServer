@@ -67,7 +67,7 @@ app.post("/todo/add", authenticateToken, (req, res) => {
   userTodos.push(newTodo);
   todo.set(userEmail, userTodos);
 
-  res.status(201).json({ message: "Todo added successfully", todo: newTodo });
+  res.status(201).json({ message: "Test change Todo added successfully", todo: newTodo });
 });
 
 // GET ALL TODOS
